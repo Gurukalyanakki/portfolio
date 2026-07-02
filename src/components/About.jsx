@@ -21,6 +21,7 @@ const About = () => {
   const isMobile = windowWidth <= 480;
   const isTablet = windowWidth > 480 && windowWidth <= 768;
   const isMobileOrTablet = windowWidth <= 768;
+  const isExtraMobile = windowWidth <= 380;
 
   const cards = [
     { icon: <FaReact />, title: "React", desc: "Modern UI" },
@@ -142,7 +143,7 @@ const About = () => {
     },
     cardsGrid: {
       display: "grid",
-      gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(2, 1fr)",
+      gridTemplateColumns: isExtraMobile ? "1fr" : "repeat(2, 1fr)",
       gap: 18
     },
     skillCard: {

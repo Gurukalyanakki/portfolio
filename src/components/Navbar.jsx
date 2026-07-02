@@ -70,7 +70,7 @@ const Navbar = ({ activeSection }) => {
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      padding: "18px 35px",
+      padding: isMobile ? "12px 20px" : "18px 35px",
       borderRadius: "999px",
       background: scrolled
         ? "linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)"
@@ -89,7 +89,7 @@ const Navbar = ({ activeSection }) => {
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
       backgroundClip: "text",
-      fontSize: "30px",
+      fontSize: isMobile ? "24px" : "30px",
       fontWeight: "700",
       cursor: "pointer",
       userSelect: "none",

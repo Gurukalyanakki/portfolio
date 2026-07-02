@@ -842,3 +842,37 @@ textarea.form-control {
   height: 18px;
   fill: currentColor;
 }
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS FIXES
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Timeline Responsive Fixes */
+  .timeline::before {
+    left: 16px;
+  }
+
+  .timeline-item {
+    padding-left: 40px;
+    margin-bottom: 40px;
+  }
+
+  .timeline-dot {
+    left: 7px;
+    width: 18px;
+    height: 18px;
+    border-width: 3px;
+  }
+
+  .timeline-card {
+    padding: 20px 16px;
+  }
+
+  /* Footer Centering Fixes */
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 16px;
+  }
+}

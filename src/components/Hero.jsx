@@ -172,14 +172,14 @@ useEffect(() => {
     },
     statsContainer: {
       display: "flex",
-      gap: isMobile ? "15px" : "25px",
+      gap: isMobile ? "10px" : "25px",
       background: "rgba(255, 255, 255, 0.85)",
       border: "1px solid rgba(56, 189, 248, 0.2)",
-      padding: isMobile ? "15px 20px" : "25px",
+      padding: isMobile ? "12px 15px" : "25px",
       width: "fit-content",
       borderRadius: "10px",
       margin: isMobileOrTablet ? "0 auto" : "0",
-      flexWrap: isMobile ? "wrap" : "nowrap",
+      flexWrap: "nowrap",
       justifyContent: "center",
       backdropFilter: "blur(10px)",
       boxShadow: "0 10px 30px rgba(0, 0, 0, 0.04)",
@@ -189,7 +189,7 @@ useEffect(() => {
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
       backgroundClip: "text",
-      fontSize: isMobile ? "20px" : "24px",
+      fontSize: isMobile ? "18px" : "24px",
       fontWeight: "700",
       display: "inline-block",
     },
@@ -200,8 +200,8 @@ useEffect(() => {
       order: isMobileOrTablet ? -1 : 1,
     },
     glowBackdrop: {
-      width: isMobile ? "360px" : isTablet ? "460px" : "570px",
-      height: isMobile ? "360px" : isTablet ? "460px" : "570px",
+      width: isMobile ? "min(85vw, 360px)" : isTablet ? "460px" : "570px",
+      height: isMobile ? "min(85vw, 360px)" : isTablet ? "460px" : "570px",
       background: "radial-gradient(circle, rgba(56, 189, 248, 0.55) 0%, rgba(40, 132, 237, 0.2) 50%, transparent 70%)",
       borderRadius: "50%",
       position: "absolute",
@@ -211,7 +211,7 @@ useEffect(() => {
       zIndex: "1",
     },
     profileImage: {
-      width: isMobile ? "330px" : isTablet ? "420px" : "540px",
+      width: isMobile ? "min(80vw, 330px)" : isTablet ? "420px" : "540px",
       position: "relative",
       zIndex: "10",
       objectFit: "contain",
@@ -220,8 +220,8 @@ useEffect(() => {
     },
     techRingOuter: {
       position: "absolute",
-      width: isMobile ? "320px" : isTablet ? "400px" : "500px",
-      height: isMobile ? "320px" : isTablet ? "400px" : "500px",
+      width: isMobile ? "min(78vw, 320px)" : isTablet ? "400px" : "500px",
+      height: isMobile ? "min(78vw, 320px)" : isTablet ? "400px" : "500px",
       border: "2px dashed rgba(56, 189, 248, 0.4)",
       borderRadius: "50%",
       top: isMobile ? "-15px" : isTablet ? "-10px" : "10px",
@@ -232,8 +232,8 @@ useEffect(() => {
     },
     techRingInner: {
       position: "absolute",
-      width: isMobile ? "280px" : isTablet ? "350px" : "440px",
-      height: isMobile ? "280px" : isTablet ? "350px" : "440px",
+      width: isMobile ? "min(70vw, 280px)" : isTablet ? "350px" : "440px",
+      height: isMobile ? "min(70vw, 280px)" : isTablet ? "350px" : "440px",
       border: "1px double rgba(192, 132, 252, 0.35)",
       borderRadius: "50%",
       top: isMobile ? "5px" : isTablet ? "15px" : "40px",
@@ -253,16 +253,16 @@ useEffect(() => {
       opacity: 0.85,
     },
     circleBg: {
-  position: "absolute",
-  width: isMobile ? "280px" : isTablet ? "380px" : "480px",
-  height: isMobile ? "280px" : isTablet ? "380px" : "480px",
-  borderRadius: "60%",
-  background: "radial-gradient(circle, #60A5FA 0%, #2563EB 70%, #1D4ED8 100%)",
-  top: "50%",
-  left: "55%",
-  transform: "translate(-50%, -50%)",
-  zIndex: 2,
-},
+      position: "absolute",
+      width: isMobile ? "min(70vw, 280px)" : isTablet ? "380px" : "480px",
+      height: isMobile ? "min(70vw, 280px)" : isTablet ? "380px" : "480px",
+      borderRadius: "60%",
+      background: "radial-gradient(circle, #60A5FA 0%, #2563EB 70%, #1D4ED8 100%)",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      zIndex: 2,
+    },
   };
    
 
@@ -312,17 +312,17 @@ useEffect(() => {
           <div style={styles.statsContainer}>
             <div style={{ textAlign: "center" }}>
               <h2 style={styles.statNum}>5+</h2>
-              <p style={{ color: "#64748b", fontSize: isMobile ? "12px" : "14px", marginTop: "4px", fontWeight: "500" }}>Experiences</p>
+              <p style={{ color: "#64748b", fontSize: isMobile ? "11px" : "14px", marginTop: "4px", fontWeight: "500" }}>Experiences</p>
             </div>
 
-            <div style={{ textAlign: "center", borderLeft: "1px solid #e2e8f0", borderRight: "1px solid #e2e8f0", padding: isMobile ? "0 15px" : "0 25px" }}>
+            <div style={{ textAlign: "center", borderLeft: "1px solid #e2e8f0", borderRight: "1px solid #e2e8f0", padding: isMobile ? "0 10px" : "0 25px" }}>
               <h2 style={styles.statNum}>20+</h2>
-              <p style={{ color: "#64748b", fontSize: isMobile ? "12px" : "14px", marginTop: "4px", fontWeight: "500" }}>Projects Done</p>
+              <p style={{ color: "#64748b", fontSize: isMobile ? "11px" : "14px", marginTop: "4px", fontWeight: "500" }}>Projects Done</p>
             </div>
 
             <div style={{ textAlign: "center" }}>
               <h2 style={styles.statNum}>80+</h2>
-              <p style={{ color: "#64748b", fontSize: isMobile ? "12px" : "14px", marginTop: "4px", fontWeight: "500" }}>Happy Clients</p>
+              <p style={{ color: "#64748b", fontSize: isMobile ? "11px" : "14px", marginTop: "4px", fontWeight: "500" }}>Happy Clients</p>
             </div>
           </div>
         </div>
@@ -352,7 +352,7 @@ useEffect(() => {
 
   top: "-120px",
 
-  left: `${2 + index * 5}%`,
+  left: `${(index * 4.2) % 95 + 2.5}%`,
 
   color:
     index % 2 === 0
