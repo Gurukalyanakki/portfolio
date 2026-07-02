@@ -48,7 +48,7 @@ const About = () => {
   // Responsive dynamic styles
   const styles = {
     section: {
-      padding: isMobileOrTablet ? "80px 24px" : "120px 8%",
+      padding: isMobileOrTablet ? "80px 0" : "120px 0",
       background: "radial-gradient(circle at top, #faf5ff 0%, #f8fafc 50%, #ffffff 100%)",
       color: "#0f172a",
       position: "relative",
@@ -161,10 +161,11 @@ const About = () => {
 
   return (
     <section id="about" style={styles.section}>
-      <div style={styles.leftGlow} />
-      <div style={styles.rightGlow} />
+      <div className="container">
+        <div style={styles.leftGlow} />
+        <div style={styles.rightGlow} />
 
-      <div style={styles.titleHeader}>
+        <div style={styles.titleHeader}>
         <p style={styles.titlePre}>ABOUT</p>
         <h2 style={styles.titleMain}>
           Building <span style={styles.titleHighlight}>Intelligent</span> Digital Experiences
@@ -221,6 +222,7 @@ const About = () => {
               <p style={{ color: "#64748b", fontSize: isMobile ? "12px" : "14px", margin: 0 }}>{c.desc}</p>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </section>

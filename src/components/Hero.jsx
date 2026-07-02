@@ -108,7 +108,7 @@ useEffect(() => {
       minHeight: "100vh",
       display: "flex",
       alignItems: "center",
-      padding: isMobileOrTablet ? "120px 24px 60px 24px" : "120px 8% 80px 8%",
+      padding: isMobileOrTablet ? "120px 0 60px 0" : "120px 0 80px 0",
     },
     grid: {
       width: "100%",
@@ -172,10 +172,10 @@ useEffect(() => {
     },
     statsContainer: {
       display: "flex",
-      gap: isMobile ? "10px" : "25px",
+      gap: isMobileOrTablet ? "10px" : "25px",
       background: "rgba(255, 255, 255, 0.85)",
       border: "1px solid rgba(56, 189, 248, 0.2)",
-      padding: isMobile ? "12px 15px" : "25px",
+      padding: isMobileOrTablet ? "12px 15px" : "25px",
       width: "fit-content",
       borderRadius: "10px",
       margin: isMobileOrTablet ? "0 auto" : "0",
@@ -189,7 +189,7 @@ useEffect(() => {
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
       backgroundClip: "text",
-      fontSize: isMobile ? "18px" : "24px",
+      fontSize: isMobileOrTablet ? "18px" : "24px",
       fontWeight: "700",
       display: "inline-block",
     },
@@ -206,6 +206,8 @@ useEffect(() => {
       borderRadius: "50%",
       position: "absolute",
       top: isMobile ? "-20px" : isTablet ? "-10px" : "10px",
+      left: "50%",
+      transform: "translateX(-50%)",
       filter: "blur(30px)",
       boxShadow: `0 0 ${isMobile ? "80px 20px" : "120px 40px"} rgba(56, 189, 248, 0.55)`,
       zIndex: "1",
@@ -268,7 +270,8 @@ useEffect(() => {
 
   return (
     <section id="home" style={styles.section}>
-      <div style={styles.grid}>
+      <div className="container">
+        <div style={styles.grid}>
         {/* Left Side */}
         <div>
           <p style={styles.greeting}>Hi I am</p>
@@ -312,17 +315,17 @@ useEffect(() => {
           <div style={styles.statsContainer}>
             <div style={{ textAlign: "center" }}>
               <h2 style={styles.statNum}>5+</h2>
-              <p style={{ color: "#64748b", fontSize: isMobile ? "11px" : "14px", marginTop: "4px", fontWeight: "500" }}>Experiences</p>
+              <p style={{ color: "#64748b", fontSize: isMobileOrTablet ? "11px" : "14px", marginTop: "4px", fontWeight: "500" }}>Experiences</p>
             </div>
 
-            <div style={{ textAlign: "center", borderLeft: "1px solid #e2e8f0", borderRight: "1px solid #e2e8f0", padding: isMobile ? "0 10px" : "0 25px" }}>
+            <div style={{ textAlign: "center", borderLeft: "1px solid #e2e8f0", borderRight: "1px solid #e2e8f0", padding: isMobileOrTablet ? "0 10px" : "0 25px" }}>
               <h2 style={styles.statNum}>20+</h2>
-              <p style={{ color: "#64748b", fontSize: isMobile ? "11px" : "14px", marginTop: "4px", fontWeight: "500" }}>Projects Done</p>
+              <p style={{ color: "#64748b", fontSize: isMobileOrTablet ? "11px" : "14px", marginTop: "4px", fontWeight: "500" }}>Projects Done</p>
             </div>
 
             <div style={{ textAlign: "center" }}>
               <h2 style={styles.statNum}>80+</h2>
-              <p style={{ color: "#64748b", fontSize: isMobile ? "11px" : "14px", marginTop: "4px", fontWeight: "500" }}>Happy Clients</p>
+              <p style={{ color: "#64748b", fontSize: isMobileOrTablet ? "11px" : "14px", marginTop: "4px", fontWeight: "500" }}>Happy Clients</p>
             </div>
           </div>
         </div>
@@ -391,6 +394,7 @@ useEffect(() => {
     style={styles.profileImage}
   />
 </div>
+        </div>
       </div>
       <style>{`
       @keyframes digitalRain {
