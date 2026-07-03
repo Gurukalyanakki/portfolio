@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 
-import profileDesktop from "../assets/kalyan.png";
-import profileMobile from "../assets/dpmob.png";
+import profileDesktop from "../assets/proff.png";
+import profileMobile from "../assets/kalyan.png";
 
 const Hero = () => {
   const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 1200);
@@ -97,18 +97,19 @@ useEffect(() => {
         behavior: "smooth",
       });
     }
-    
   };
 
   // Dynamic Styles based on screen size
   const styles = {
     section: {
-      background: "radial-gradient(circle at top right, #e0f2fe 0%, #faf5ff 40%, #ffffff 100%)",
-      color: "#0f172a",
+      background: "radial-gradient(circle at 10% 20%, rgba(239, 68, 68, 0.15) 0%, transparent 45%), radial-gradient(circle at 90% 80%, rgba(249, 115, 22, 0.15) 0%, transparent 45%), radial-gradient(circle at 50% 50%, rgba(234, 179, 8, 0.08) 0%, transparent 50%), var(--bg-900)",
+      color: "var(--text-100)",
       minHeight: "100vh",
       display: "flex",
       alignItems: "center",
       padding: isMobileOrTablet ? "120px 0 60px 0" : "120px 0 80px 0",
+      position: "relative",
+      overflow: "hidden",
     },
     grid: {
       width: "100%",
@@ -117,81 +118,103 @@ useEffect(() => {
       alignItems: "center",
       gap: isMobileOrTablet ? "60px" : "50px",
       textAlign: isMobileOrTablet ? "center" : "left",
+      position: "relative",
+      zIndex: 2,
     },
-    greeting: {
-      color: "#64748b",
-      fontSize: isMobile ? "16px" : "18px",
-      marginBottom: "10px",
-      fontWeight: "500",
+    greetingBadge: {
+      display: "inline-flex",
+      alignItems: "center",
+      padding: "8px 18px",
+      borderRadius: "50px",
+      background: "linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(249, 115, 22, 0.1) 100%)",
+      border: "1px solid rgba(239, 68, 68, 0.25)",
+      marginBottom: "20px",
+      backdropFilter: "blur(10px)",
+      width: "fit-content",
+      margin: isMobileOrTablet ? "0 auto 20px auto" : "0 0 20px 0",
+      boxShadow: "0 4px 12px rgba(239, 68, 68, 0.04)",
+      transition: "0.3s ease",
+    },
+    greetingText: {
+      fontSize: "14px",
+      fontWeight: "600",
+      background: "linear-gradient(135deg, #ef4444 0%, #f97316 100%)",
     },
     name: {
-      color: "#0f172a",
-      fontSize: isMobileOrTablet ? "28px" : "32px",
+      fontFamily: "var(--font-heading)",
+      fontSize: isMobile ? "32px" : isTablet ? "44px" : "54px",
+      fontWeight: "800",
+      lineHeight: 1.1,
       marginBottom: "15px",
-      fontWeight: "600",
-    },
-    title: {
-      background: "linear-gradient(135deg, #38bdf8 0%, #c084fc 100%)",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      backgroundClip: "text",
-      fontSize: isMobile ? "38px" : isTablet ? "52px" : "65px",
-      fontWeight: "700",
-      marginBottom: "20px",
-      lineHeight: isMobile ? "46px" : isTablet ? "60px" : "75px",
+      background: "linear-gradient(135deg, #ffffff 30%, #f97316 70%, #ef4444 100%)",
       display: "inline-block",
     },
-   
+    title: {
+      background: "linear-gradient(135deg, #ef4444 0%, #f97316 50%, #eab308 100%)",
+      fontSize: isMobile ? "34px" : isTablet ? "46px" : "58px",
+      fontWeight: "700",
+      marginBottom: "25px",
+      lineHeight: isMobile ? "42px" : isTablet ? "54px" : "68px",
+      display: "inline-block",
+    },
     buttonsContainer: {
       display: "flex",
       gap: "20px",
       marginBottom: "50px",
       justifyContent: isMobileOrTablet ? "center" : "flex-start",
       flexWrap: "wrap",
+      alignItems: "center",
     },
     btnPrimary: {
-      background: "linear-gradient(135deg, #2884ed 0%, #a855f7 100%)",
+      background: "linear-gradient(135deg, #ef4444 0%, #f97316 50%, #eab308 100%)",
       color: "#fff",
       border: "none",
       padding: isMobile ? "12px 28px" : "14px 35px",
-      borderRadius: "6px",
+      borderRadius: "30px",
       fontWeight: "600",
       cursor: "pointer",
-      transition: "0.3s ease",
-      boxShadow: "0 4px 15px rgba(40, 132, 237, 0.25)",
+      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+      boxShadow: "0 4px 20px rgba(239, 68, 68, 0.35)",
+      display: "inline-block",
     },
     btnSecondary: {
-      background: "transparent",
-      color: "#475569",
-      border: "1px solid #cbd5e1",
-      padding: isMobile ? "12px 28px" : "14px 35px",
-      borderRadius: "6px",
+      background: "linear-gradient(var(--bg-900), var(--bg-900)) padding-box, linear-gradient(135deg, #ef4444 0%, #f97316 100%) border-box",
+      border: "2px solid transparent",
+      color: "#ef4444",
+      padding: isMobile ? "11px 27px" : "13px 34px",
+      borderRadius: "30px",
       cursor: "pointer",
       fontWeight: "600",
-      transition: "border-color 0.3s ease, color 0.3s ease",
+      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+      display: "inline-block",
+      boxShadow: "0 4px 15px rgba(0, 0, 0, 0.03)",
     },
     statsContainer: {
       display: "flex",
       gap: isMobileOrTablet ? "10px" : "25px",
-      background: "rgba(255, 255, 255, 0.85)",
-      border: "1px solid rgba(56, 189, 248, 0.2)",
-      padding: isMobileOrTablet ? "12px 15px" : "25px",
+      background: "rgba(20, 20, 20, 0.75)",
+      border: "1px solid rgba(239, 68, 68, 0.15)",
+      padding: isMobileOrTablet ? "15px 20px" : "20px 35px",
       width: "fit-content",
-      borderRadius: "10px",
+      borderRadius: "20px",
       margin: isMobileOrTablet ? "0 auto" : "0",
       flexWrap: "nowrap",
       justifyContent: "center",
-      backdropFilter: "blur(10px)",
-      boxShadow: "0 10px 30px rgba(0, 0, 0, 0.04)",
+      backdropFilter: "blur(15px)",
+      boxShadow: "0 10px 30px rgba(239, 68, 68, 0.05)",
     },
     statNum: {
-      background: "linear-gradient(135deg, #38bdf8 0%, #c084fc 100%)",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      backgroundClip: "text",
-      fontSize: isMobileOrTablet ? "18px" : "24px",
-      fontWeight: "700",
+      background: "linear-gradient(135deg, #ef4444 0%, #f97316 50%, #eab308 100%)",
+      fontSize: isMobileOrTablet ? "24px" : "32px",
+      fontWeight: "800",
       display: "inline-block",
+    },
+    statDivider: {
+      width: "1px",
+      height: "40px",
+      background: "linear-gradient(to bottom, transparent, rgba(239, 68, 68, 0.2), transparent)",
+      alignSelf: "center",
+      margin: isMobileOrTablet ? "0 10px" : "0 25px",
     },
     imageContainer: {
       display: "flex",
@@ -202,221 +225,233 @@ useEffect(() => {
     glowBackdrop: {
       width: isMobile ? "min(85vw, 360px)" : isTablet ? "460px" : "570px",
       height: isMobile ? "min(85vw, 360px)" : isTablet ? "460px" : "570px",
-      background: "radial-gradient(circle, rgba(56, 189, 248, 0.55) 0%, rgba(40, 132, 237, 0.2) 50%, transparent 70%)",
+      background: "radial-gradient(circle, rgba(239, 68, 68, 0.65) 0%, rgba(249, 115, 22, 0.3) 50%, transparent 70%)",
       borderRadius: "50%",
       position: "absolute",
       top: isMobile ? "-20px" : isTablet ? "-10px" : "10px",
       left: "50%",
       transform: "translateX(-50%)",
-      filter: "blur(30px)",
-      boxShadow: `0 0 ${isMobile ? "80px 20px" : "120px 40px"} rgba(56, 189, 248, 0.55)`,
+      filter: "blur(40px)",
+      boxShadow: `0 0 ${isMobile ? "80px 20px" : "120px 40px"} rgba(239, 68, 68, 0.45)`,
       zIndex: "1",
+      opacity: 0.85,
     },
     profileImage: {
       width: isMobile ? "min(80vw, 330px)" : isTablet ? "420px" : "540px",
       position: "relative",
       zIndex: "10",
       objectFit: "contain",
-      maskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%)",
-      WebkitMaskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%)",
+      maskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%)",
+      WebkitMaskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%)",
     },
     techRingOuter: {
       position: "absolute",
       width: isMobile ? "min(78vw, 320px)" : isTablet ? "400px" : "500px",
       height: isMobile ? "min(78vw, 320px)" : isTablet ? "400px" : "500px",
-      border: "2px dashed rgba(56, 189, 248, 0.4)",
+      border: "2px dashed rgba(239, 68, 68, 0.4)",
       borderRadius: "50%",
       top: isMobile ? "-15px" : isTablet ? "-10px" : "10px",
       left: "50%",
       transform: "translateX(-50%)",
       zIndex: "2",
       pointerEvents: "none",
+      boxShadow: "0 0 15px rgba(239, 68, 68, 0.15)",
     },
     techRingInner: {
       position: "absolute",
       width: isMobile ? "min(70vw, 280px)" : isTablet ? "350px" : "440px",
       height: isMobile ? "min(70vw, 280px)" : isTablet ? "350px" : "440px",
-      border: "1px double rgba(192, 132, 252, 0.35)",
+      border: "1.5px dashed rgba(249, 115, 22, 0.3)",
       borderRadius: "50%",
       top: isMobile ? "5px" : isTablet ? "15px" : "40px",
       left: "50%",
       transform: "translateX(-50%)",
       zIndex: "3",
       pointerEvents: "none",
-    },
-    techSymbol: {
-      position: "absolute",
-      fontSize: isMobile ? "18px" : "24px",
-      fontWeight: "700",
-      fontFamily: "monospace",
-      userSelect: "none",
-      zIndex: "4",
-      pointerEvents: "none",
-      opacity: 0.85,
+      boxShadow: "0 0 15px rgba(249, 115, 22, 0.1)",
     },
     circleBg: {
       position: "absolute",
       width: isMobile ? "min(70vw, 280px)" : isTablet ? "380px" : "480px",
       height: isMobile ? "min(70vw, 280px)" : isTablet ? "380px" : "480px",
-      borderRadius: "60%",
-      background: "radial-gradient(circle, #60A5FA 0%, #2563EB 70%, #1D4ED8 100%)",
+      borderRadius: "50%",
+      background: "linear-gradient(135deg, rgba(239, 68, 68, 0.2) 0%, rgba(249, 115, 22, 0.45) 50%, rgba(234, 179, 8, 0.25) 100%)",
+      border: "1px solid rgba(255, 255, 255, 0.15)",
       top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)",
       zIndex: 2,
+      backdropFilter: "blur(5px)",
+      boxShadow: "inset 0 0 40px rgba(255, 255, 255, 0.1), 0 20px 50px rgba(239, 68, 68, 0.15)",
     },
   };
    
 
   return (
     <section id="home" style={styles.section}>
+      {/* Background Ambient Glows */}
+      <div className="ambient-glow glow-teal animate-pulse-glow" style={{ top: "10%", left: "10%", opacity: 0.15, background: "#ef4444" }} />
+      <div className="ambient-glow glow-violet animate-pulse-glow" style={{ bottom: "20%", right: "10%", animationDelay: "2s", opacity: 0.15, background: "#eab308" }} />
+      <div className="ambient-glow glow-indigo animate-pulse-glow" style={{ top: "40%", left: "50%", animationDelay: "4s", opacity: 0.1, background: "#f97316" }} />
+
       <div className="container">
         <div style={styles.grid}>
-        {/* Left Side */}
-        <div>
-          <p style={styles.greeting}>Hi I am</p>
+          {/* Left Side */}
+          <div>
+            <div style={styles.greetingBadge}>
+              <span className="gradient-text-clip" style={styles.greetingText}>👋 Welcome to my Portfolio</span>
+            </div>
 
-          <h2 style={styles.name}>THUNIKALA GURU KALYAN</h2>
+            <div>
+              <h2 className="gradient-text-clip" style={styles.name}>THUNIKALA GURU KALYAN</h2>
+            </div>
 
-        <h1
-  style={{
-    ...styles.title,
-    minHeight: "70px",
-    color: "#38bdf8",
-    transition: "0.4s ease",
-  }}
->
-  {text}
-  <span
-    style={{
-      color: "#38bdf8",
-      animation: "blink 0.8s infinite",
-    }}
-  >
-    |
-  </span>
-</h1>
+            <div style={{ minHeight: "80px" }}>
+              <h1 className="gradient-text-clip" style={styles.title}>
+                {text}
+                <span
+                  style={{
+                    color: "#f97316",
+                    animation: "blink 0.8s infinite",
+                    fontWeight: "300",
+                    marginLeft: "2px",
+                  }}
+                >
+                  |
+                </span>
+              </h1>
+            </div>
+            
+            <div style={styles.buttonsContainer}>
+              <button
+                onClick={() => handleScrollTo("contact")}
+                style={styles.btnPrimary}
+                onMouseEnter={(e) => {
+                  e.target.style.transform = "translateY(-3px) scale(1.02)";
+                  e.target.style.boxShadow = "0 8px 30px rgba(249, 115, 22, 0.5)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.transform = "translateY(0) scale(1)";
+                  e.target.style.boxShadow = "0 4px 20px rgba(239, 68, 68, 0.35)";
+                }}
+              >
+                Let's Talk
+              </button>
 
-          
-          <div style={styles.buttonsContainer}>
-            <button
-              onClick={() => handleScrollTo("contact")}
-              style={styles.btnPrimary}
-              onMouseEnter={(e) => (e.target.style.background = "linear-gradient(135deg, #38bdf8 0%, #c084fc 100%)")}
-              onMouseLeave={(e) => (e.target.style.background = "linear-gradient(135deg, #2884ed 0%, #a855f7 100%)")}
-            >
-              Let's Talk
-            </button>
+              <button
+                onClick={() => handleScrollTo("projects")}
+                style={styles.btnSecondary}
+                onMouseEnter={(e) => {
+                  e.target.style.background = "linear-gradient(135deg, #ef4444 0%, #f97316 100%) border-box";
+                  e.target.style.color = "#fff";
+                  e.target.style.transform = "translateY(-3px) scale(1.02)";
+                  e.target.style.boxShadow = "0 8px 25px rgba(249, 115, 22, 0.35)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.background = "linear-gradient(var(--bg-900), var(--bg-900)) padding-box, linear-gradient(135deg, #ef4444 0%, #f97316 100%) border-box";
+                  e.target.style.color = "#ef4444";
+                  e.target.style.transform = "translateY(0) scale(1)";
+                  e.target.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.03)";
+                }}
+              >
+                View Projects
+              </button>
+            </div>
 
-          
+            {/* Stats */}
+            <div style={styles.statsContainer}>
+              <div style={{ textAlign: "center" }}>
+                <h2 className="gradient-text-clip" style={styles.statNum}>5+</h2>
+                <p style={{ color: "#9ca3af", fontSize: isMobileOrTablet ? "11px" : "14px", marginTop: "4px", fontWeight: "600" }}>Experiences</p>
+              </div>
+
+              <div style={styles.statDivider} />
+
+              <div style={{ textAlign: "center" }}>
+                <h2 className="gradient-text-clip" style={styles.statNum}>20+</h2>
+                <p style={{ color: "#9ca3af", fontSize: isMobileOrTablet ? "11px" : "14px", marginTop: "4px", fontWeight: "600" }}>Projects Done</p>
+              </div>
+
+              <div style={styles.statDivider} />
+
+              <div style={{ textAlign: "center" }}>
+                <h2 className="gradient-text-clip" style={styles.statNum}>80+</h2>
+                <p style={{ color: "#9ca3af", fontSize: isMobileOrTablet ? "11px" : "14px", marginTop: "4px", fontWeight: "600" }}>Happy Clients</p>
+              </div>
+            </div>
           </div>
 
-          {/* Stats */}
-          <div style={styles.statsContainer}>
-            <div style={{ textAlign: "center" }}>
-              <h2 style={styles.statNum}>5+</h2>
-              <p style={{ color: "#64748b", fontSize: isMobileOrTablet ? "11px" : "14px", marginTop: "4px", fontWeight: "500" }}>Experiences</p>
-            </div>
+          {/* Right Side */}
+          <div style={styles.imageContainer}>
+            <div style={styles.glowBackdrop}></div>
 
-            <div style={{ textAlign: "center", borderLeft: "1px solid #e2e8f0", borderRight: "1px solid #e2e8f0", padding: isMobileOrTablet ? "0 10px" : "0 25px" }}>
-              <h2 style={styles.statNum}>20+</h2>
-              <p style={{ color: "#64748b", fontSize: isMobileOrTablet ? "11px" : "14px", marginTop: "4px", fontWeight: "500" }}>Projects Done</p>
-            </div>
+            {/* Background glass-like circle */}
+            <div style={styles.circleBg}></div>
 
-            <div style={{ textAlign: "center" }}>
-              <h2 style={styles.statNum}>80+</h2>
-              <p style={{ color: "#64748b", fontSize: isMobileOrTablet ? "11px" : "14px", marginTop: "4px", fontWeight: "500" }}>Happy Clients</p>
-            </div>
+            <div
+              className="animate-spin-slow"
+              style={styles.techRingOuter}
+            ></div>
+
+            <div
+              className="animate-spin-reverse-slow"
+              style={styles.techRingInner}
+            ></div>
+
+            {rainSymbols.map((symbol, index) => (
+              <span
+                key={index}
+                style={{
+                  position: "absolute",
+                  top: "-120px",
+                  left: `${(index * 4.2) % 95 + 2.5}%`,
+                  color: index % 2 === 0 ? "#ef4444" : "#f97316",
+                  fontSize: `${9 + (index % 4) * 4}px`,
+                  fontWeight: "500",
+                  fontFamily: "monospace",
+                  textShadow: "0 0 10px rgba(239, 68, 68, 0.8), 0 0 25px rgba(249, 115, 22, 0.5)",
+                  filter: "drop-shadow(0 0 8px #ef4444)",
+                  opacity: 0.65,
+                  animation: `digitalRain ${10 + (index % 5)}s linear infinite`,
+                  animationDelay: `${index * 0.4}s`,
+                  zIndex: 4,
+                  pointerEvents: "none",
+                }}
+              >
+                {symbol}
+              </span>
+            ))}
+
+            <img
+              src={isMobileOrTablet ? profileMobile : profileDesktop}
+              alt="profile"
+              style={styles.profileImage}
+            />
           </div>
-        </div>
-
-        {/* Right Side */}
-       <div style={styles.imageContainer}>
-  <div style={styles.glowBackdrop}></div>
-
-  {/* NEW BLUE CIRCLE */}
-  <div style={styles.circleBg}></div>
-
-  <div
-    className="animate-spin-slow"
-    style={styles.techRingOuter}
-  ></div>
-
-  <div
-    className="animate-spin-reverse-slow"
-    style={styles.techRingInner}
-  ></div>
-
-  {rainSymbols.map((symbol, index) => (
-  <span
-    key={index}
-  style={{
-  position: "absolute",
-
-  top: "-120px",
-
-  left: `${(index * 4.2) % 95 + 2.5}%`,
-
-  color:
-    index % 2 === 0
-      ? "#38bdf8"
-      : "#8b5cf6",
-
-  fontSize: `${9 + (index % 4) * 4}px`,
-
-  fontWeight: "500",
-
-  fontFamily: "monospace",
-
-  textShadow:
-    "0 0 10px rgba(56,189,248,.9), 0 0 25px rgba(56,189,248,.7), 0 0 45px rgba(56,189,248,.5)",
-
-  filter: "drop-shadow(0 0 12px #38bdf8)",
-
-  opacity: 0.85,
-
-  animation: `digitalRain ${10 + (index % 5)}s linear infinite`,
-
-  animationDelay: `${index * .4}s`,
-
-  zIndex: 4,
-
-  pointerEvents: "none",
-}}
-  >
-    {symbol}
-  </span>
-))}
-
-  <img
-    src={isMobileOrTablet ? profileMobile : profileDesktop}
-    alt="profile"
-    style={styles.profileImage}
-  />
-</div>
         </div>
       </div>
       <style>{`
-      @keyframes digitalRain {
-        0% {
-          transform: translateY(-120px);
-          opacity: 0;
+        @keyframes digitalRain {
+          0% {
+            transform: translateY(-120px);
+            opacity: 0;
+          }
+          10% {
+            opacity: .6;
+          }
+          90% {
+            opacity: .6;
+          }
+          100% {
+            transform: translateY(900px);
+            opacity: 0;
+          }
         }
-
-        10% {
-          opacity: .6;
+        @keyframes blink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0; }
         }
-
-        90% {
-          opacity: .6;
-        }
-
-        100% {
-          transform: translateY(900px);
-          opacity: 0;
-        }
-      }
-    `}</style>
+      `}</style>
     </section>
   );
 };

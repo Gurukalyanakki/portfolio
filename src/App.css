@@ -8,7 +8,7 @@
   width: 100%;
   height: var(--header-height);
   z-index: 1000;
-  background: rgba(13, 17, 23, 0.4);
+  background: rgba(10, 10, 10, 0.4);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-glass);
@@ -16,8 +16,8 @@
 }
 
 .navbar.scrolled {
-  background: rgba(13, 17, 23, 0.85);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  background: rgba(10, 10, 10, 0.85);
+  box-shadow: 0 4px 30px rgba(239, 68, 68, 0.05);
   height: 70px;
 }
 
@@ -229,7 +229,7 @@
   border-radius: 50%;
   background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-indigo) 50%, var(--primary-violet) 100%);
   padding: 5px;
-  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.25);
+  box-shadow: 0 10px 40px rgba(239, 68, 68, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -416,7 +416,7 @@
   background: linear-gradient(135deg, var(--primary-teal), var(--primary-indigo));
   color: var(--text-100);
   border-color: transparent;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.15);
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.25);
 }
 
 .projects-grid {
@@ -470,7 +470,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(13, 17, 23, 0) 50%, rgba(13, 17, 23, 0.8) 100%);
+  background: linear-gradient(to bottom, rgba(10, 10, 10, 0) 50%, rgba(10, 10, 10, 0.85) 100%);
   z-index: 1;
 }
 
@@ -580,14 +580,14 @@
   background: var(--bg-900);
   border: 4px solid var(--primary-teal);
   z-index: 10;
-  box-shadow: 0 0 10px rgba(20, 184, 166, 0.5);
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.6);
   transition: all var(--transition-normal);
 }
 
 .timeline-item:hover .timeline-dot {
   transform: scale(1.2);
   border-color: var(--primary-indigo);
-  box-shadow: 0 0 15px rgba(99, 102, 241, 0.7);
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.8);
 }
 
 .timeline-card {
@@ -763,7 +763,7 @@
 
 .form-control:focus {
   border-color: var(--primary-indigo);
-  box-shadow: 0 0 12px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.25);
 }
 
 textarea.form-control {

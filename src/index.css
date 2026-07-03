@@ -1,23 +1,23 @@
 :root {
   /* Colors */
-  --bg-900: #ffffff;
-  --bg-800: #f8fafc;
-  --bg-700: #f1f5f9;
-  --bg-600: #e2e8f0;
+  --bg-900: #0a0a0a; /* Deep rich black */
+  --bg-800: #121212; /* Dark charcoal grey */
+  --bg-700: #1a1a1a; /* Medium charcoal grey */
+  --bg-600: #262626; /* Light charcoal/grey border */
   
-  --primary-teal: #0ea5e9;
-  --primary-indigo: #2884ed;
-  --primary-violet: #8b5cf6;
+  --primary-teal: #ef4444;   /* Fiery red */
+  --primary-indigo: #f97316; /* Blazing orange */
+  --primary-violet: #eab308; /* Glowing gold/amber */
   
-  --text-100: #0f172a;
-  --text-200: #334155;
-  --text-300: #475569;
-  --text-muted: #64748b;
+  --text-100: #ffffff;       /* Pure white headings */
+  --text-200: #e5e5e5;       /* Readable light grey body text */
+  --text-300: #a3a3a3;       /* Secondary grey text */
+  --text-muted: #737373;     /* Muted text */
   
-  --border-glass: rgba(0, 0, 0, 0.08);
-  --border-glass-hover: rgba(0, 0, 0, 0.15);
-  --bg-glass: rgba(255, 255, 255, 0.85);
-  --bg-glass-card: rgba(255, 255, 255, 0.65);
+  --border-glass: rgba(239, 68, 68, 0.15);      /* Fiery red glass border */
+  --border-glass-hover: rgba(249, 115, 22, 0.3);  /* Blazing orange glass border */
+  --bg-glass: rgba(15, 15, 15, 0.85);             /* Dark glass background */
+  --bg-glass-card: rgba(20, 20, 20, 0.7);          /* Dark card background */
   
   /* Fonts */
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -120,7 +120,8 @@ section {
 
 .glass-card:hover {
   border-color: var(--border-glass-hover);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(239, 68, 68, 0.03);
+  box-shadow: 0 8px 30px rgba(239, 68, 68, 0.08);
 }
 
 /* Typography & Accent Styles */
@@ -129,13 +130,22 @@ section {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: transparent;
 }
 
 .gradient-text-alt {
-  background: linear-gradient(135deg, hsl(320, 85%, 60%) 0%, var(--primary-violet) 50%, var(--primary-indigo) 100%);
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #f97316 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: transparent;
+}
+
+.gradient-text-clip {
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -182,8 +192,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary {
   background: linear-gradient(135deg, var(--primary-teal), var(--primary-indigo));
-  color: var(--text-100);
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
 }
 
 .btn-primary::before {
@@ -210,7 +220,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.45);
 }
 
 .btn-secondary {
@@ -222,7 +232,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-secondary:hover {
   border-color: var(--primary-indigo);
   color: var(--text-100);
-  background: rgba(99, 102, 241, 0.05);
+  background: rgba(249, 115, 22, 0.08);
   transform: translateY(-2px);
 }
 
@@ -324,3 +334,5 @@ h1, h2, h3, h4, h5, h6 {
   50% { transform: translateY(10px) rotate(-4deg); }
   100% { transform: translateY(0px) rotate(0deg); }
 }
+
+

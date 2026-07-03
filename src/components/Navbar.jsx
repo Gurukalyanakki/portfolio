@@ -73,19 +73,19 @@ const Navbar = ({ activeSection }) => {
       padding: isMobile ? "12px 20px" : "18px 35px",
       borderRadius: "999px",
       background: scrolled
-        ? "linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)"
-        : "linear-gradient(135deg, rgba(255, 255, 255, 0.65) 0%, rgba(248, 250, 252, 0.65) 100%)",
+        ? "linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.95) 100%)"
+        : "linear-gradient(135deg, rgba(20, 20, 20, 0.7) 0%, rgba(10, 10, 10, 0.7) 100%)",
       backdropFilter: "blur(18px)",
       WebkitBackdropFilter: "blur(18px)",
-      border: "1px solid rgba(0, 0, 0, 0.08)",
+      border: "1px solid rgba(239, 68, 68, 0.15)",
       boxShadow: scrolled
-        ? "0 15px 40px rgba(0, 0, 0, 0.08)"
-        : "0 10px 30px rgba(0, 0, 0, 0.04)",
+        ? "0 15px 40px rgba(239, 68, 68, 0.08)"
+        : "0 10px 30px rgba(239, 68, 68, 0.04)",
       transition: ".35s",
     },
 
     logo: {
-      background: "linear-gradient(135deg, #38bdf8 0%, #c084fc 100%)",
+      background: "linear-gradient(135deg, #ef4444 0%, #f97316 100%)",
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
       backgroundClip: "text",
@@ -106,7 +106,7 @@ const Navbar = ({ activeSection }) => {
     link: {
       background: "transparent",
       border: "none",
-      color: "#475569",
+      color: "#a3a3a3",
       cursor: "pointer",
       fontSize: "15px",
       transition: ".3s",
@@ -114,12 +114,12 @@ const Navbar = ({ activeSection }) => {
     },
 
     activeLink: {
-      color: "#38bdf8",
+      color: "#ef4444",
       fontWeight: "600",
     },
 
     button: {
-      background: "linear-gradient(135deg, #2884ed 0%, #a855f7 100%)",
+      background: "linear-gradient(135deg, #ef4444 0%, #f97316 100%)",
       color: "#fff",
       border: "none",
       padding: "12px 28px",
@@ -133,14 +133,14 @@ const Navbar = ({ activeSection }) => {
       display: isMobile ? "block" : "none",
       background: "transparent",
       border: "none",
-      color: "#0f172a",
+      color: "#ffffff",
       fontSize: "28px",
       cursor: "pointer",
     },
 
     mobileMenu: {
       marginTop: "15px",
-      background: "linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.98) 100%)",
+      background: "linear-gradient(135deg, rgba(20, 20, 20, 0.98) 0%, rgba(10, 10, 10, 0.98) 100%)",
       backdropFilter: "blur(18px)",
       borderRadius: "30px",
       padding: "25px",
@@ -148,8 +148,8 @@ const Navbar = ({ activeSection }) => {
       flexDirection: "column",
       alignItems: "center",
       gap: "20px",
-      border: "1px solid rgba(0, 0, 0, 0.08)",
-      boxShadow: "0 15px 30px rgba(0, 0, 0, 0.08)",
+      border: "1px solid rgba(239, 68, 68, 0.15)",
+      boxShadow: "0 15px 30px rgba(239, 68, 68, 0.08)",
     },
   };
 
@@ -161,7 +161,7 @@ const Navbar = ({ activeSection }) => {
           onClick={() => handleLinkClick("home")}
         >
           GK
-          <span style={{ WebkitTextFillColor: "#0f172a" }}>.</span>
+          <span style={{ WebkitTextFillColor: "#eab308" }}>.</span>
         </div>
 
         <div style={styles.links}>
@@ -176,13 +176,13 @@ const Navbar = ({ activeSection }) => {
                   : {}),
               }}
               onMouseEnter={(e) => {
-                e.target.style.color = "#c084fc";
+                e.target.style.color = "#f97316";
               }}
               onMouseLeave={(e) => {
                 e.target.style.color =
                   activeSection === item.id
-                    ? "#38bdf8"
-                    : "#475569";
+                    ? "#ef4444"
+                    : "#a3a3a3";
               }}
             >
               {item.label}
@@ -193,10 +193,10 @@ const Navbar = ({ activeSection }) => {
             style={styles.button}
             onClick={() => handleLinkClick("contact")}
             onMouseEnter={(e) => {
-              e.target.style.background = "linear-gradient(135deg, #38bdf8 0%, #c084fc 100%)";
+              e.target.style.background = "linear-gradient(135deg, #f97316 0%, #eab308 100%)";
             }}
             onMouseLeave={(e) => {
-              e.target.style.background = "linear-gradient(135deg, #2884ed 0%, #a855f7 100%)";
+              e.target.style.background = "linear-gradient(135deg, #ef4444 0%, #f97316 100%)";
             }}
           >
             Let's Talk
@@ -228,13 +228,13 @@ const Navbar = ({ activeSection }) => {
                   : {}),
               }}
               onMouseEnter={(e) => {
-                e.target.style.color = "#c084fc";
+                e.target.style.color = "#f97316";
               }}
               onMouseLeave={(e) => {
                 e.target.style.color =
                   activeSection === item.id
-                    ? "#38bdf8"
-                    : "#475569";
+                    ? "#ef4444"
+                    : "#a3a3a3";
               }}
             >
               {item.label}
@@ -245,10 +245,10 @@ const Navbar = ({ activeSection }) => {
             style={styles.button}
             onClick={() => handleLinkClick("contact")}
             onMouseEnter={(e) => {
-              e.target.style.background = "linear-gradient(135deg, #38bdf8 0%, #c084fc 100%)";
+              e.target.style.background = "linear-gradient(135deg, #f97316 0%, #eab308 100%)";
             }}
             onMouseLeave={(e) => {
-              e.target.style.background = "linear-gradient(135deg, #2884ed 0%, #a855f7 100%)";
+              e.target.style.background = "linear-gradient(135deg, #ef4444 0%, #f97316 100%)";
             }}
           >
             Let's Talk
