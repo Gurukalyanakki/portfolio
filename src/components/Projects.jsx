@@ -107,8 +107,8 @@ const Projects = () => {
 
       <div className="container">
         <div className="section-title-wrapper">
-          <span className="section-subtitle">My Portfolio</span>
-          <h2 className="section-title">Recent Projects</h2>
+          <span className="section-subtitle">My</span>
+          <h2 className="section-title">Projects</h2>
         </div>
 
         {/* Filter Navigation */}
