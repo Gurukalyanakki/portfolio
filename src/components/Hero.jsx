@@ -18,7 +18,7 @@ const Hero = () => {
 
   const titles = [
   "Full Stack Developer",
-  "AI Enthusiast",
+  "AI & ML Enthusiast",
 ];
 const rainSymbols = [
   "⚛",
@@ -102,7 +102,7 @@ useEffect(() => {
   // Dynamic Styles based on screen size
   const styles = {
     section: {
-      background: "radial-gradient(circle at 10% 20%, rgba(239, 68, 68, 0.15) 0%, transparent 45%), radial-gradient(circle at 90% 80%, rgba(249, 115, 22, 0.15) 0%, transparent 45%), radial-gradient(circle at 50% 50%, rgba(234, 179, 8, 0.08) 0%, transparent 50%), var(--bg-900)",
+      background: "radial-gradient(circle at 15% 25%, rgba(249, 115, 22, 0.07) 0%, transparent 45%), radial-gradient(circle at 85% 75%, rgba(251, 146, 60, 0.06) 0%, transparent 45%), radial-gradient(circle at 50% 50%, rgba(254, 215, 170, 0.02) 0%, transparent 50%), var(--bg-900)",
       color: "var(--text-100)",
       minHeight: "100vh",
       display: "flex",
@@ -290,16 +290,16 @@ useEffect(() => {
   return (
     <section id="home" style={styles.section}>
       {/* Background Ambient Glows */}
-      <div className="ambient-glow glow-teal animate-pulse-glow" style={{ top: "10%", left: "10%", opacity: 0.15, background: "#ef4444" }} />
-      <div className="ambient-glow glow-violet animate-pulse-glow" style={{ bottom: "20%", right: "10%", animationDelay: "2s", opacity: 0.15, background: "#eab308" }} />
-      <div className="ambient-glow glow-indigo animate-pulse-glow" style={{ top: "40%", left: "50%", animationDelay: "4s", opacity: 0.1, background: "#f97316" }} />
+      <div className="ambient-glow glow-teal animate-pulse-glow" style={{ top: "10%", left: "10%", opacity: 0.07, background: "#f97316" }} />
+      <div className="ambient-glow glow-violet animate-pulse-glow" style={{ bottom: "20%", right: "10%", animationDelay: "2s", opacity: 0.05, background: "#ea580c" }} />
+      <div className="ambient-glow glow-indigo animate-pulse-glow" style={{ top: "40%", left: "50%", animationDelay: "4s", opacity: 0.06, background: "#fb923c" }} />
 
       <div className="container">
         <div style={styles.grid}>
           {/* Left Side */}
           <div>
             <div style={styles.greetingBadge}>
-              <span className="gradient-text-clip" style={styles.greetingText}>👋 Welcome to my Portfolio</span>
+              <span className="gradient-text-clip" style={styles.greetingText}>Hello I'm</span>
             </div>
 
             <div>
@@ -409,11 +409,10 @@ useEffect(() => {
                   fontSize: `${9 + (index % 4) * 4}px`,
                   fontWeight: "500",
                   fontFamily: "monospace",
-                  textShadow: "0 0 10px rgba(239, 68, 68, 0.8), 0 0 25px rgba(249, 115, 22, 0.5)",
+                  textShadow: "0 0 10px rgba(239, 68, 68, 0.6), 0 0 25px rgba(249, 115, 22, 0.4)",
                   filter: "drop-shadow(0 0 8px #ef4444)",
                   opacity: 0.65,
-                  animation: `digitalRain ${10 + (index % 5)}s linear infinite`,
-                  animationDelay: `${index * 0.4}s`,
+                  animation: `digitalRain ${10 + (index % 5)}s linear ${index * 0.4}s infinite`,
                   zIndex: 4,
                   pointerEvents: "none",
                 }}
@@ -430,28 +429,7 @@ useEffect(() => {
           </div>
         </div>
       </div>
-      <style>{`
-        @keyframes digitalRain {
-          0% {
-            transform: translateY(-120px);
-            opacity: 0;
-          }
-          10% {
-            opacity: .6;
-          }
-          90% {
-            opacity: .6;
-          }
-          100% {
-            transform: translateY(900px);
-            opacity: 0;
-          }
-        }
-        @keyframes blink {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0; }
-        }
-      `}</style>
+
     </section>
   );
 };

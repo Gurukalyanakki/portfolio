@@ -73,14 +73,16 @@ const Navbar = ({ activeSection }) => {
       padding: isMobile ? "12px 20px" : "18px 35px",
       borderRadius: "999px",
       background: scrolled
-        ? "linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.95) 100%)"
-        : "linear-gradient(135deg, rgba(20, 20, 20, 0.7) 0%, rgba(10, 10, 10, 0.7) 100%)",
-      backdropFilter: "blur(18px)",
-      WebkitBackdropFilter: "blur(18px)",
-      border: "1px solid rgba(239, 68, 68, 0.15)",
+        ? "rgba(10, 10, 10, 0.6)"
+        : "rgba(15, 15, 15, 0.35)",
+      backdropFilter: "blur(20px)",
+      WebkitBackdropFilter: "blur(20px)",
+      border: scrolled
+        ? "1px solid rgba(255, 255, 255, 0.12)"
+        : "1px solid rgba(255, 255, 255, 0.07)",
       boxShadow: scrolled
-        ? "0 15px 40px rgba(239, 68, 68, 0.08)"
-        : "0 10px 30px rgba(239, 68, 68, 0.04)",
+        ? "0 15px 45px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.03)"
+        : "0 10px 30px rgba(0, 0, 0, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.01)",
       transition: ".35s",
     },
 
@@ -140,16 +142,17 @@ const Navbar = ({ activeSection }) => {
 
     mobileMenu: {
       marginTop: "15px",
-      background: "linear-gradient(135deg, rgba(20, 20, 20, 0.98) 0%, rgba(10, 10, 10, 0.98) 100%)",
-      backdropFilter: "blur(18px)",
+      background: "rgba(15, 15, 15, 0.75)",
+      backdropFilter: "blur(20px)",
+      WebkitBackdropFilter: "blur(20px)",
       borderRadius: "30px",
       padding: "25px",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       gap: "20px",
-      border: "1px solid rgba(239, 68, 68, 0.15)",
-      boxShadow: "0 15px 30px rgba(239, 68, 68, 0.08)",
+      border: "1px solid rgba(255, 255, 255, 0.12)",
+      boxShadow: "0 15px 30px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.03)",
     },
   };
 
